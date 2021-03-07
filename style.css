@@ -1,0 +1,367 @@
+/*!
+Theme Name: Rebo
+Theme URI: http://Reboart.com/
+Author: Rebo
+Author URI: https://reboart.com
+Description: Template to my blog ins ferry Fast, resposive, flexbox. Simple & Fast
+Version: 1.0.6
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: rebo
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Rebo is based on Reboart.com https://Reboart.com/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+	 ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Sections
+	 ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+	margin: 0;
+	font-family: Poppins,sans-serif;
+	font-size: 20px;
+	background: #779fca40;
+}
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.main-navigation {
+  background: #0082e6;
+  height: 80px;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  webkit-box-shadow: 0 10px 15px -3px rgba(0,0,0,.05), 0 4px 6px -2px rgba(0,0,0,.05);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,.05), 0 4px 6px -2px rgba(0,0,0,.05);
+}
+label.logo-nav{
+  line-height: 80px;
+}
+label.logo-nav img,.custom-logo{
+	width: 200px !important;
+	height: 50px !important;
+}
+label.logo-nav img {
+	margin: 10px;
+}
+.menu-menu-container {
+  display:contents;
+}
+.main-navigation .menu{
+  float: right;
+  margin-right: 20px;
+}
+.main-navigation .menu li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+.main-navigation .menu li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 20px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.menu a.active,a:hover{
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check, .mobile-navigation{
+  display: none;
+}
+/*Home*/
+.site {
+	margin: 0 auto;
+    max-width: 70%;
+    margin-top: 100px;
+}
+.widget {
+	margin-top: 10px;
+}
+.cp .post-thumbnail img,
+.ac .post-thumbnail img,
+.sc .post-thumbnail img,
+.rel-post .post-thumbnail img {
+	max-width: 260px;
+    height: 140px;
+    border-radius: 10px;
+    max-width: -webkit-fill-available;
+    display: inline-block;
+}
+.cp, 
+.ac,
+.sc,
+#secondary {
+display: grid;
+grid-column-gap: 10px;
+grid-auto-rows: max-content;
+grid-template-columns: 280px 280px 280px;
+}
+.ac-header,
+.sc-header {
+	grid-column-start: 2;
+    
+}
+.title-posts {
+	font-size: 25px !important;
+}
+
+.posts-navigation {
+	padding: 10px 0;
+    text-align: center;
+    background: #fff;
+    margin: 10px auto;
+    width: 300px;
+    border-radius: 40px;
+}
+.posts-navigation .page-numbers {
+	padding:5px 5px;
+}
+.single article img, .site-page article img {
+	width: 100%;
+    height: auto;
+    display:block;
+}
+.cs div {
+	display:inline-block;
+}
+.nav-single {
+	margin-top:10px;
+}
+.nav-single, .prev-posts, .next-posts, .next-single, .prev-single{
+	display:flex;
+}
+.next-single, .prev-posts {
+	padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+}
+.next-single, .prev-single .col-left {
+	margin-left: 10px;
+}
+.next-single img, .prev-single img {
+	border-radius: 10px;
+}
+
+/*Article*/
+.breadcrumb {
+	margin-bottom: 20px;
+	font-size: 15px;
+	text-transform: uppercase;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+article {
+	padding: 10px;
+	margin-top: 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.05), 0 4px 6px -2px rgba(0,0,0,.05);
+}
+.single .title-posts {
+  text-transform: uppercase;
+}
+
+.single .cs h3{
+  display: block;
+  margin: 5px 0;
+  padding: 5px;
+  border-left: 5px solid #0082e6;
+}
+
+.share-entry {
+	display: inline-flex;
+	display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(50px,1fr));
+    border: var(--border);
+    overflow: hidden;
+    margin-top: 20px;
+    background: #eee;
+    border-radius: 0 0 5px 5px;
+}
+.share-entry li {
+	padding: 10px 20px;
+	text-align: center;
+}
+.rel-post {
+	display: var(--visibility,grid);
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 3%;
+    grid-row-gap: 10px;
+    --listStyleType: none;
+}
+
+.footer {
+	text-align: center;
+	padding:30px;
+}
+.menu-footer-container ul {
+	display:inline-flex;
+}
+.menu-footer-container ul li {
+	margin: 10px;
+}
+
+@media (max-width: 991px){
+	.site {
+	    max-width: 90%;
+	}
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  .main-navigation .menu ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 888px){
+
+  .main-navigation #primary-menu {
+  	display:none;
+  }
+  .checkbtn, .mobile-navigation{
+    display: block;
+  }
+  .mobile-navigation{
+    position: fixed;
+    width: 300px;
+    z-index: 1;
+    height: 100vh;
+    background: #f1f1f1;
+    top: 0;
+    left: -100%;
+    text-align: right;
+    transition: all .5s;
+  }
+  .mobile-navigation .custom-logo{
+  	margin: 40px;
+  }
+  .menu {
+  	margin: 0 !important;
+  }
+  .mobile-navigation .menu li{
+    display: block;
+    margin: 20px 0;
+    line-height: 30px;
+  }
+  .mobile-navigation .menu li a{
+    font-size: 20px;
+    background: rgb(0,130,230);
+	background: linear-gradient(90deg, rgba(0,130,230,1) 0%, rgba(44,62,80,1) 100%);
+    border-radius: 20px 0 0 20px !important;
+	padding: 10px;
+    color: #fff;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ .mobile-navigation{
+    left: 0;
+  }
+  .mobile-navigation .logo {
+  	margin-top: 80px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .site,
+  .rel-post {
+  	display:block;
+  }
+  .cp,
+  .ac,
+  .sc,
+  #secondary,
+	rel-post {
+  	display:block;
+  }
+  .site aside {
+	margin-left: 0;
+  }
+  .nav-single {
+		display:block;
+	}
+	.next-single {
+		margin: 10px 0 0 0;
+
+	}
+
+}
